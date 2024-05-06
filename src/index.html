@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  mira la consola
+<script>
+// function uniquifyArray(array) {
+//   console.log(" unuquifyArray Function")
+//   if (array.length > 0) {
+//         console.log("array-->"+array)
+//      let array2 = [];
+//      let idx;
+
+//      for (let i = 0; i < array.length; i++) {
+
+//         idx = array2.indexOf(array[i]);
+//         console.log("array["+i+"] = "+array[i]+ "index -->"+idx)
+//         if (idx == -1 ) {
+//            array2.push(array[i]);
+//          }
+//         if (array2.length < 1) {
+//              array2 = array[1];
+//         } 
+//     }
+//         console.table(array2)
+//         return array2;
+//   } else {
+//         return undefined;   
+//   }
+// }
+//     uniquifyArray(['FactoriaF5'])
+//     uniquifyArray(['FactoriaF5', 'FactoriaF5', 'FactoriaF5'])
+//     uniquifyArray(['Cat', 'Dog', 'Cow'])
+//     uniquifyArray(['iPhone', 'Samsung', 'Android', 'iOS', 'iPhone', 'Samsung', 'Nokia', 'Blackberry', 'Android'])
+
+
+// function doesWordExist(array, palabra) {
+//     let resultat = false;
+//     for (let i = 0; i < array.length; i++) {
+//       console.log(array[i]+"/"+palabra)
+//       if (array[i] == palabra) {
+//         console.log("true")
+//         resultat = true;
+//       }
+//     }
+//     console.log("doesWordExist: "+resultat)
+//     return resultat
+// }
+// doesWordExist(['pizza', 'sandwich', 'snack', 'soda', 'book', 'computer'], 'book')
+// doesWordExist(['machine', 'poison', 'eat', 'apple', 'horse'], 'ratatouille')
+
+
+function howManyTimes(array, palabra) {
+  if (array.length > 0) {
+    console.log("exercici: "+array)
+    let resultat = 0;
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] == palabra) {
+       resultat ++;
+     }
+    }
+    console.log("howmanyTimes "+palabra+": "+resultat)
+    return resultat;
+
+  } else {
+    return undefined;
+  }
+}
+howManyTimes([])
+howManyTimes(['a', 'b', 'c'], 'a')
+howManyTimes(['a', 'b', 'c'], 'z')
+howManyTimes(['basketball', 'football', 'tennis', 'rugby', 'rugby', 'ping pong', 'rugby', 'basketball', 'rugby', 'handball', 'rugby'], 'rugby')
+</script>
+</body>
+</html>
