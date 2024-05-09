@@ -53,15 +53,16 @@ export function uniquifyArray(array) {
     let array2 = [];
     let idx;
 
-    for (let i = 0; i < array.length; i++) {
-      idx = array2.indexOf(array[i]);
-      console.log("array[" + i + "] = " + array[i] + "index -->" + idx);
-      if (idx == -1) {
-        array2.push(array[i]);
+    if (array2.length != 1) { 
+      for (let i = 0; i < array.length; i++) {
+        idx = array2.indexOf(array[i]);
+        console.log("array[" + i + "] = " + array[i] + "index -->" + idx);
+        if (idx == -1) {
+          array2.push(array[i].toString());
+       }
       }
-      if (array2.length < 1) {
-        array2 = array[1];
-      }
+    } else {
+        array2 = [...array];
     }
     console.log(array2);
     return array2;
@@ -133,7 +134,7 @@ export function greatestProduct(matrix) {
         console.log("Multiplicacio vertical", multiplicacioV)
         maxProduct = multiplicacioV
       }
-      
+
       let multiplicacioD = matrix[i][j] 
       if (matrix[i].length > i+1 && matrix[j].length > j+1) {
         multiplicacioD = multiplicacioD * matrix[i+1][j+1]

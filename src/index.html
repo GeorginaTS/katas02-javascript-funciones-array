@@ -8,86 +8,86 @@
 <body>
   mira la consola
 <script>
-// function uniquifyArray(array) {
-//   console.log(" unuquifyArray Function")
-//   if (array.length > 0) {
-//         console.log("array-->"+array)
-//      let array2 = [];
-//      let idx;
+function uniquifyArray(array) {
+  console.log(" unuquifyArray Function")
+  if (array.length > 0) {
+     console.log("array-->"+array)
+     let array2 = [];
+     let idx;
 
-//      for (let i = 0; i < array.length; i++) {
+     for (let i = 0; i < array.length; i++) {
 
-//         idx = array2.indexOf(array[i]);
-//         console.log("array["+i+"] = "+array[i]+ "index -->"+idx)
-//         if (idx == -1 ) {
-//            array2.push(array[i]);
-//          }
-//         if (array2.length < 1) {
-//              array2 = array[1];
-//         } 
-//     }
-//         console.log(array2)
-//         return array2;
-//   } else {
-//         return undefined;   
-//   }
-// }
-//     uniquifyArray(['FactoriaF5'])
-//     uniquifyArray(['FactoriaF5', 'FactoriaF5', 'FactoriaF5'])
-//     uniquifyArray(['Cat', 'Dog', 'Cow'])
-//     uniquifyArray(['iPhone', 'Samsung', 'Android', 'iOS', 'iPhone', 'Samsung', 'Nokia', 'Blackberry', 'Android'])
-let matrix = [
-  [ 1,  2, 3, 4, 5],
-  [ 1, 20, 3, 4, 5],
-  [ 1, 20, 3, 4, 5],
-  [ 1, 20, 3, 4, 5],
-  [ 1,  4, 3, 4, 5],
-];
-function greatestProduct(matrix) {
-  let maxProduct = 1;
-  for (let i = 0; i < matrix.length; i++) {
-    for(let j=0; j < matrix[i].length; j++) {
-
-      
-      let multiplicacioH = matrix[i][j] 
-      if (matrix[j].length > j+1) {
-        multiplicacioH = multiplicacioH * matrix[i][j+1]
-      } 
-      if (matrix[j].length > j+2) {
-        multiplicacioH = multiplicacioH * matrix[i][j+2]
-      } 
-      if (matrix[j].length > j+3) {
-        multiplicacioH = multiplicacioH * matrix[i][j+3]
-      } 
-
-      if (multiplicacioH > maxProduct) {
-        maxProduct = multiplicacioH
-        console.log("Multiplicacio Horitzontal", multiplicacioH)
-      }
-      
-      let multiplicacioV = matrix[i][j] 
-      if (matrix[i].length > i+1) {
-        multiplicacioV = multiplicacioV * matrix[i+1][j]
-      } 
-      if (matrix[i].length > i+2) {
-        multiplicacioV = multiplicacioV * matrix[i+2][j]
-      } 
-      if (matrix[i].length > i+3) {
-        multiplicacioV = multiplicacioV * matrix[i+3][j]
-      } 
-      
-      
-      
-      if (multiplicacioV > maxProduct) {
-        console.log("Multiplicacio vertical", multiplicacioV)
-        maxProduct = multiplicacioV
-      }
+        idx = array2.indexOf(array[i]);
+        //console.log("array["+i+"] = "+array[i]+ "index -->"+idx)
+        if (idx == -1 ) {
+           array2.push(array[i]);
+         }
+        if (array2.length < 1) {
+             array2 = [...array];
+        } 
     }
+        console.log(array2)
+        return array2;
+  } else {
+        return undefined;   
   }
-  console.log(maxProduct)
-  return maxProduct;
 }
-greatestProduct(matrix)
+    uniquifyArray(['FactoriaF5'])
+    uniquifyArray(['FactoriaF5', 'FactoriaF5', 'FactoriaF5'])
+    uniquifyArray(['Cat', 'Dog', 'Cow'])
+    uniquifyArray(['iPhone', 'Samsung', 'Android', 'iOS', 'iPhone', 'Samsung', 'Nokia', 'Blackberry', 'Android'])
+// let matrix = [
+//   [ 1,  2, 3, 4, 5],
+//   [ 1, 20, 3, 4, 5],
+//   [ 1, 20, 3, 4, 5],
+//   [ 1, 20, 3, 4, 5],
+//   [ 1,  4, 3, 4, 5],
+// ];
+// function greatestProduct(matrix) {
+//   let maxProduct = 1;
+//   for (let i = 0; i < matrix.length; i++) {
+//     for(let j=0; j < matrix[i].length; j++) {
+
+      
+//       let multiplicacioH = matrix[i][j] 
+//       if (matrix[j].length > j+1) {
+//         multiplicacioH = multiplicacioH * matrix[i][j+1]
+//       } 
+//       if (matrix[j].length > j+2) {
+//         multiplicacioH = multiplicacioH * matrix[i][j+2]
+//       } 
+//       if (matrix[j].length > j+3) {
+//         multiplicacioH = multiplicacioH * matrix[i][j+3]
+//       } 
+
+//       if (multiplicacioH > maxProduct) {
+//         maxProduct = multiplicacioH
+//         console.log("Multiplicacio Horitzontal", multiplicacioH)
+//       }
+      
+//       let multiplicacioV = matrix[i][j] 
+//       if (matrix[i].length > i+1) {
+//         multiplicacioV = multiplicacioV * matrix[i+1][j]
+//       } 
+//       if (matrix[i].length > i+2) {
+//         multiplicacioV = multiplicacioV * matrix[i+2][j]
+//       } 
+//       if (matrix[i].length > i+3) {
+//         multiplicacioV = multiplicacioV * matrix[i+3][j]
+//       } 
+      
+      
+      
+//       if (multiplicacioV > maxProduct) {
+//         console.log("Multiplicacio vertical", multiplicacioV)
+//         maxProduct = multiplicacioV
+//       }
+//     }
+//   }
+//   console.log(maxProduct)
+//   return maxProduct;
+// }
+// greatestProduct(matrix)
 </script>
 </body>
 </html>

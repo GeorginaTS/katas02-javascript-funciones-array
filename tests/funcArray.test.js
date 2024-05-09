@@ -150,21 +150,21 @@ it('returns undefined testh an empty array', ()=> {
     assert.strictEqual(uniquifyArray([]),undefined);
   });
 
-//  it('returns the array when having a single element', ()=> {
-//      assert.strictEqual(uniquifyArray(['FactoriaF5'])),['FactoriaF5'];
-//    });
+  it('returns the array when having a single element', ()=> {
+      assert.strictEqual(uniquifyArray(['FactoriaF5']).toString(),['FactoriaF5'].toString());
+  });
 
-// it('returns the correct array when having an array of the same element', ()=> {
-//      assert.strictEqual(uniquifyArray(['FactoriaF5', 'FactoriaF5', 'FactoriaF5'])),['FactoriaF5'];
-//  });
+it('returns the correct array when having an array of the same element', ()=> {
+     assert.strictEqual(uniquifyArray(['FactoriaF5', 'FactoriaF5', 'FactoriaF5']).toString(),['FactoriaF5'].toString());
+ });
 
-// it('returns the same array when no element is repeated', ()=> {
-//     assert.strictEqual(uniquifyArray(['Cat', 'Dog', 'Cow'])).toEqual(['Cat', 'Dog', 'Cow']);
-//   });
+it('returns the same array when no element is repeated', ()=> {
+  assert.strictEqual(uniquifyArray(['Cat', 'Dog', 'Cow']).toString(),['Cat', 'Dog', 'Cow'].toString());
+});
 
-// it('returns the uniquified array', ()=> {
-//     assert.strictEqual(uniquifyArray(['iPhone', 'Samsung', 'Android', 'iOS', 'iPhone', 'Samsung', 'Nokia', 'Blackberry', 'Android'])).toEqual(['iPhone', 'Samsung', 'Android', 'iOS', 'Nokia', 'Blackberry']);
-//   });
+it('returns the uniquified array', ()=> {
+    assert.strictEqual(uniquifyArray(['iPhone', 'Samsung', 'Android', 'iOS', 'iPhone', 'Samsung', 'Nokia', 'Blackberry', 'Android']).toString(),['iPhone', 'Samsung', 'Android', 'iOS', 'Nokia', 'Blackberry'].toString());
+  });
 });
 
 describe('Finding Elements - doesWordExist #7', ()=> {
