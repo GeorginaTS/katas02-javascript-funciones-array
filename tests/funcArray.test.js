@@ -146,9 +146,9 @@ it('Defines uniquifyArray', ()=> {
     assert.strictEqual(typeof uniquifyArray,'function');
   });
 
-// it('returns undefined testh an empty array', ()=> {
-//     assert.strictEqual(uniquifyArray([]),undefined);
-//   });
+it('returns undefined testh an empty array', ()=> {
+    assert.strictEqual(uniquifyArray([]),undefined);
+  });
 
 //  it('returns the array when having a single element', ()=> {
 //      assert.strictEqual(uniquifyArray(['FactoriaF5'])),['FactoriaF5'];
@@ -266,15 +266,15 @@ it('Return maxProduct when all max is vertical, not first column', ()=> {
     assert.strictEqual(greatestProduct(matrix),6561);
   });
 
-//   it('Return maxProduct when all max is diagonal', ()=> {
-//     let matrix = [
-//       [9, 1, 1, 1],
-//       [1, 9, 1, 1],
-//       [1, 1, 9, 1],
-//       [1, 1, 1, 9]
-//     ];
-//     assert.strictEqual(greatestProduct(matrix),6561);
-//   });
+  it('Return maxProduct when all max is diagonal', ()=> {
+    let matrix = [
+      [9, 1, 1, 1],
+      [1, 9, 1, 1],
+      [1, 1, 9, 1],
+      [1, 1, 1, 9]
+    ];
+    assert.strictEqual(greatestProduct(matrix),6561);
+  });
 
 it('Return 16 when all the numbers of the arrays are 2', ()=> {
     let matrix = [

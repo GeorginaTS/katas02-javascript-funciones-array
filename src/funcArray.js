@@ -133,6 +133,21 @@ export function greatestProduct(matrix) {
         console.log("Multiplicacio vertical", multiplicacioV)
         maxProduct = multiplicacioV
       }
+      
+      let multiplicacioD = matrix[i][j] 
+      if (matrix[i].length > i+1 && matrix[j].length > j+1) {
+        multiplicacioD = multiplicacioD * matrix[i+1][j+1]
+      } 
+      if (matrix[i].length > i+2 && matrix[j].length > j+2) {
+        multiplicacioD = multiplicacioD * matrix[i+2][j+2]
+      } 
+      if (matrix[i].length > i+3 && matrix[j].length > j+3) {
+        multiplicacioD = multiplicacioD * matrix[i+3][j+3]
+      } 
+      if (multiplicacioD > maxProduct) {
+        console.log("Multiplicacio diagonal", multiplicacioD)
+        maxProduct = multiplicacioD
+      }
     }
   }
   console.log(maxProduct)
