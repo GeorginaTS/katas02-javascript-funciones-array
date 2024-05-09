@@ -26,7 +26,7 @@
 //              array2 = array[1];
 //         } 
 //     }
-//         console.table(array2)
+//         console.log(array2)
 //         return array2;
 //   } else {
 //         return undefined;   
@@ -36,44 +36,58 @@
 //     uniquifyArray(['FactoriaF5', 'FactoriaF5', 'FactoriaF5'])
 //     uniquifyArray(['Cat', 'Dog', 'Cow'])
 //     uniquifyArray(['iPhone', 'Samsung', 'Android', 'iOS', 'iPhone', 'Samsung', 'Nokia', 'Blackberry', 'Android'])
+let matrix = [
+  [ 1,  2, 3, 4, 5],
+  [ 1, 20, 3, 4, 5],
+  [ 1, 20, 3, 4, 5],
+  [ 1, 20, 3, 4, 5],
+  [ 1,  4, 3, 4, 5],
+];
+function greatestProduct(matrix) {
+  let maxProduct = 1;
+  for (let i = 0; i < matrix.length; i++) {
+    for(let j=0; j < matrix[i].length; j++) {
 
+      
+      let multiplicacioH = matrix[i][j] 
+      if (matrix[j].length > j+1) {
+        multiplicacioH = multiplicacioH * matrix[i][j+1]
+      } 
+      if (matrix[j].length > j+2) {
+        multiplicacioH = multiplicacioH * matrix[i][j+2]
+      } 
+      if (matrix[j].length > j+3) {
+        multiplicacioH = multiplicacioH * matrix[i][j+3]
+      } 
 
-// function doesWordExist(array, palabra) {
-//     let resultat = false;
-//     for (let i = 0; i < array.length; i++) {
-//       console.log(array[i]+"/"+palabra)
-//       if (array[i] == palabra) {
-//         console.log("true")
-//         resultat = true;
-//       }
-//     }
-//     console.log("doesWordExist: "+resultat)
-//     return resultat
-// }
-// doesWordExist(['pizza', 'sandwich', 'snack', 'soda', 'book', 'computer'], 'book')
-// doesWordExist(['machine', 'poison', 'eat', 'apple', 'horse'], 'ratatouille')
-
-
-function howManyTimes(array, palabra) {
-  if (array.length > 0) {
-    console.log("exercici: "+array)
-    let resultat = 0;
-    for (let i = 0; i < array.length; i++) {
-      if (array[i] == palabra) {
-       resultat ++;
-     }
+      if (multiplicacioH > maxProduct) {
+        maxProduct = multiplicacioH
+        console.log("Multiplicacio Horitzontal", multiplicacioH)
+      }
+      
+      let multiplicacioV = matrix[i][j] 
+      if (matrix[i].length > i+1) {
+        multiplicacioV = multiplicacioV * matrix[i+1][j]
+      } 
+      if (matrix[i].length > i+2) {
+        multiplicacioV = multiplicacioV * matrix[i+2][j]
+      } 
+      if (matrix[i].length > i+3) {
+        multiplicacioV = multiplicacioV * matrix[i+3][j]
+      } 
+      
+      
+      
+      if (multiplicacioV > maxProduct) {
+        console.log("Multiplicacio vertical", multiplicacioV)
+        maxProduct = multiplicacioV
+      }
     }
-    console.log("howmanyTimes "+palabra+": "+resultat)
-    return resultat;
-
-  } else {
-    return undefined;
   }
+  console.log(maxProduct)
+  return maxProduct;
 }
-howManyTimes([])
-howManyTimes(['a', 'b', 'c'], 'a')
-howManyTimes(['a', 'b', 'c'], 'z')
-howManyTimes(['basketball', 'football', 'tennis', 'rugby', 'rugby', 'ping pong', 'rugby', 'basketball', 'rugby', 'handball', 'rugby'], 'rugby')
+greatestProduct(matrix)
 </script>
 </body>
 </html>
